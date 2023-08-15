@@ -1,0 +1,59 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+.header {
+  align-items: center;
+  background-color:#1b1d2a;
+  color: #657ef8;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.profileIcon {
+  cursor: pointer;
+  font-size: 24px;
+  margin-right: 20px;
+}
+
+.header h1 {
+  margin-left: 100px; /* Added margin-left to move the heading to the right */
+}
+
+.sidebar {
+  width: 250px;
+  height: 100%;
+  background-color: #333;
+  position: fixed;
+  top: 0;
+  left: -250px;
+  transition: left 0.3s ease-in-out;
+  color: white;
+  padding-top: 20px;
+}
+
+.content {
+  margin-left: 250px;
+  padding: 20px;
+}
+
+.sidebarButton {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  cursor: pointer;
+  font-size: 20px;
+  padding: 5px;
+}
+
+.sidebar-menu {
+  display: block;
+}
+
+.sidebar-icon {
+  display: none;
+}
