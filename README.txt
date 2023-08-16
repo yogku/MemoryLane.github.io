@@ -1,4 +1,4 @@
-Hii!, Yogesh and Nittin Reddy here,
+Hii!, Yogesh and Nithin Reddy here,
 
 this is our first website project "Memory Lane".
 
