@@ -1,5 +1,5 @@
-Hii!, Yogesh and Nithin Reddy here,
+Hii!,This is Yogesh and Nithin Reddy,
 
-this is our first website project "Memory Lane".
+It's our first website project "Memory Lane".
 
 https://yogku.github.io/index.html
