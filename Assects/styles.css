@@ -1,0 +1,80 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  position: relative;
+}
+
+.header {
+  align-items: center;
+  background-color: #1b1d2a;
+  color: #657ef8;
+  z-index: 1002;
+  padding: 15px 1px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.profileIcon {
+  cursor: pointer;
+  font-size: 24px;
+  margin-right: 20px;
+}
+
+.header h1 {
+  z-index: 1001;
+  font-family: 'Pacifico';
+  font-size: 30px;
+  position: absolute;
+  top: 30px; /* Adjusted to lower the position by 10px */
+  left: 70px; /* Adjust the value to position it next to the toggle button */
+  transform: translateY(-50%);
+  margin: 0;
+}
+
+
+
+.sidebar {
+  z-index: 1000;
+  position: fixed;
+  top: 0;
+  left: -200px;
+  width: 200px;
+  height: 100%;
+  background-color: #1b1d2a;
+  color: #ffffff;
+  padding-top: 60px;
+  transition: left 0.3s ease-in-out;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar ul li {
+  padding: 10px 0;
+  text-align: center;
+}
+
+.sidebar ul li a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.toggleButton {
+  z-index: 1003;
+  cursor: pointer;
+  font-size: 24px;
+  margin-left: 20px; 
+}
+
+.show {
+  left: 0;
+}
+
+.content {
+  padding: 20px;
+}
