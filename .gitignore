@@ -1,4 +1,5 @@
 gitcmd.md
+.gitignore
 
 # to add repository:
 # 	git remote add origin git@github.com:yogku/yogku.github.io.git
