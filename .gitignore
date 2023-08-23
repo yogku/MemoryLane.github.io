@@ -22,4 +22,8 @@ gitcmd.md
 # 	git push origin master
 # 	(that will send all the changes to remote repo)
 	
+# to reset :
+# 	git reset --hard 
+# 	(Deleates all the changes done in files)
+	
 	
