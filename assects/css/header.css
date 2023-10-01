@@ -5,7 +5,7 @@
   font-family: 'Poppins', sans-serif;
 }
 body{
-  background-color: #acb9fb;
+  background-color: #0c0f1d;
 }
 .header {
   position: relative;
@@ -31,13 +31,28 @@ body{
 }
 
 .profileIcon {
-  z-index: 4; /* Higher z-index */
+  z-index: 4; 
   cursor: pointer;
   font-size: 24px;
   position: fixed;
   top: 20px;
   right: 20px;
+  margin-right: 20px;
 }
+.post-icon {
+  z-index: 4;
+  cursor: pointer;
+  font-size: 24px;
+  position: fixed;
+  top: 20px;
+  right: 60px;
+}
+.post-icon img{
+  margin-right: 25px;
+  height: 35px;
+  width: 35px;
+}
+
 .logo{
   cursor: pointer;
   color: #657ef8;
@@ -50,12 +65,14 @@ body{
   top: 200;
   left: 0;
   padding: 30px 15px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
   background: rgb(27, 29, 49);
   display: flex;
   justify-content: space-between;
   flex-direction: column;
   transition: width 0.4s;
-  z-index: 1; 
+  z-index: 1;
 }
 
 .side-nav ul:last-child {
@@ -78,6 +95,8 @@ ul li{
 ul li img{
   width: 30px;
   margin-right: 0px;
+  height: 40px;
+  width: 40px;
 }
 
 ul li p{
@@ -89,6 +108,7 @@ ul li p{
 .content-container {
   margin-left: 250px;
   padding: 20px;
+  color: white;
 }
 
 .content {
@@ -105,10 +125,60 @@ ul li p{
 }
 
 .side-nav:hover ul li p{
+  color: white;
+  display: block;
+}
+
+.side-nav ul li p:hover{
   color: #657ef8;
   display: block;
 }
 
 .side-nav:hover ul li img{
   margin-right: 10px;
+
+}
+
+
+/* ----------------------------------------------------------------------------------------------- */
+/* ----------------------------------------------------------------------------------------------- */
+
+
+.post-nav{
+  position: fixed;
+  top: 50px;
+  right: 0;
+  opacity: 1;
+  transform: translateX(0) scale(0.5);
+  width: 380px;
+  padding: 20px 30px;
+  background: rgb(27, 29, 49);
+  box-shadow: 2px 2px 5px 5px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+  transition: opacity 200ms ease-in-out 0ms, transform 200ms ease-in-out 0ms;
+}
+
+.post-nav ul li {
+  justify-content: flex-start;
+  border-radius: 10px;
+}
+
+.post-nav ul li img {
+  height: 75px;
+  width: 75px;
+  margin-right: 10px;
+  border-radius: 15px; 
+}
+
+.post-nav ul li p{
+  
+  color: white;
+  display: block;
+  margin-left: 30px;
+  font-size: 1.9rem;
+}
+
+.side-nav ul li p:hover{
+  color: #657ef8;
+  display: block;
 }
