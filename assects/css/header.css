@@ -35,23 +35,16 @@ body{
   cursor: pointer;
   font-size: 24px;
   position: fixed;
-  top: 20px;
-  right: 20px;
+  right: 5px;
+  top: 10px;
   margin-right: 20px;
 }
-.post-icon {
-  z-index: 4;
-  cursor: pointer;
-  font-size: 24px;
-  position: fixed;
-  top: 20px;
-  right: 60px;
+.profileIcon img{
+  height: 50px;
+  width: 50px;
 }
-.post-icon img{
-  margin-right: 25px;
-  height: 35px;
-  width: 35px;
-}
+
+
 
 .logo{
   cursor: pointer;
@@ -136,20 +129,32 @@ ul li p{
 
 .side-nav:hover ul li img{
   margin-right: 10px;
-
 }
 
 
 /* ----------------------------------------------------------------------------------------------- */
 /* ----------------------------------------------------------------------------------------------- */
 
-
-.post-nav{
+.post-icon {
+  z-index: 4;
+  cursor: pointer;
+  font-size: 24px;
   position: fixed;
-  top: 50px;
-  right: 0;
-  opacity: 1;
-  transform: translateX(0) scale(0.5);
+  top: 20px;
+  right: 60px;
+}
+.post-icon img{
+  margin-right: 25px;
+  height: 35px;
+  width: 35px;
+}
+.post-nav{
+  z-index: 5;
+  position: fixed;
+  top: 19.5px;
+  right: 30px;
+  opacity: 0;
+  transform: translateX(0) scale(0.7);
   width: 380px;
   padding: 20px 30px;
   background: rgb(27, 29, 49);
@@ -163,6 +168,10 @@ ul li p{
   border-radius: 10px;
 }
 
+.post-nav:hover ul li{
+  justify-content: flex-start;
+}
+
 .post-nav ul li img {
   height: 75px;
   width: 75px;
@@ -171,14 +180,14 @@ ul li p{
 }
 
 .post-nav ul li p{
-  
   color: white;
   display: block;
   margin-left: 30px;
   font-size: 1.9rem;
 }
 
-.side-nav ul li p:hover{
+.post-nav ul li p:hover {
   color: #657ef8;
   display: block;
 }
+
