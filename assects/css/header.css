@@ -82,7 +82,6 @@ ul li{
   display: flex;
   align-items: center;
   justify-content: center;
-  cursor: pointer;
 }
 
 ul li img{
@@ -114,6 +113,7 @@ ul li p{
 }
 
 .side-nav:hover ul li{
+  cursor:  pointer;
   justify-content: flex-start;
 }
 
@@ -173,6 +173,7 @@ ul li p{
 }
 
 .post-nav ul li img {
+  cursor: pointer;
   height: 75px;
   width: 75px;
   margin-right: 10px;
@@ -189,5 +190,6 @@ ul li p{
 .post-nav ul li p:hover {
   color: #657ef8;
   display: block;
+  cursor: pointer;
 }
 
