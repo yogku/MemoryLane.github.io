@@ -203,7 +203,8 @@ ul li p{
 /* ---------------------------------------------------------------------------------- */
 /* ---------------------------------------------------------------------------------- */
 .profile-nav{
-  z-index: 5;
+  opacity: 1; /* mannu help*/
+  z-index: 6;
   position: fixed;
   top: 63px;
   right: 30px;
@@ -253,16 +254,56 @@ ul li p{
   color: rgba(243, 244, 246, 1);
 }
 
+.input-group button {
+  display: inline-block;
+  border-radius: 2px;
+  background-color: #3d405b;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 17px;
+  padding: 6px;
+  width: 80px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+ }
+ 
+ .input-group button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+ }
+ 
+ button span:after {
+  content: '»';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -15px;
+  transition: 0.5s;
+ }
+ 
+ button:hover span {
+  padding-right: 15px;
+ }
+ 
+ button:hover span:after {
+  opacity: 1;
+  right: 0;
+ }
 
 /* ---------------------------------------------------------------------------------- */
 /* ---------------------------------------------------------------------------------- */
 
 
 
-.content-container {
+.c-container {
   color: white;
-  z-index: 2;
-  position: fixed;
+  opacity: 1;
+  z-index: 8;
+  position: fixed; /* Change to fixed */
   top: 62px;
   bottom: 0;
   left: 50%;
