@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Memory Lane</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet'>
+  <link rel="stylesheet" href="assects/css/header.css"> 
+  <link rel="stylesheet" href="assects/css/aboutus.css"> 
+</head>
+<body>
+
+  <div class="header">
+    <a href="index.html" class="logo"><h1>MemoryLane</h1></a>
+    <div class="profileIcon" ><img src="assects/images/profile.png"></div> 
+    <div class="post-icon" id="postIcon"><img src="assects/images/post-icon.png"></div>
+  </div>
+
+ 
+  <div class="side-nav">
+    <ul>
+        <li><a href="index.html"><img src="assects/images/home.png"></a>      <a href="index.html">  <p><b>Home      </b></p> </a></li>
+        <li><a href="aboutus.html"><img src="assects/images/aboutus.png"></a>   <a href="aboutus.html">  <p><b>About us  </b></p> </a></li>
+        <li><a href="index.html"><img src="assects/images/feedback.png"></a>  <a href="index.html">  <p><b>Feedback  </b></p> </a></li>
+
+    </ul>
+    <ul>
+        <li><img src="assects/images/Language.png"> <p><b>Language</b></p></li>
+    </ul>
+  </div>
+
+  <div class="post-nav">
+    <ul>
+      <li><a href="post-text.html"><img src="assects/images/post-text.png"></a>  <a href="post-text.html"> <p><b>Post  </b></p></a></li>
+      <li><a href="post-image.html"><img src="assects/images/post-image.png"></a> <a href="post-image.html"><p><b>Image </b></p></a></li> 
+  </ul>
+  </div>
+  
+  <div class="profile-nav" id="profileNav">
+    <ul>
+      <li><img src="assects/images/profile.png"><p><b>User</b></p></li>       
+  </ul>
+
+    <div class="input-group">
+      <input name="new-username" id="input-username" placeholder="Set New Username">
+      <button class="set-new-username">Set</button>  
+    </div>
+  </div>
+
+<div class="aboutus-container">
+  <div class="head-aboutus  ">
+    <h1><center>About Us</center></h1>
+  </div>
+  <br>
+  <div class="description">
+    <p>Welcome to our social media platform, where users can share images and engage in anonymous discussions. We've crafted this platform using a combination of HTML, CSS, JavaScript, and PHP to provide a seamless and user-friendly experience.</p>
+    <br>
+    <p>We believe in simplicity. Our design focuses on making interactions intuitive and straightforward, ensuring that every user can navigate and enjoy the platform effortlessly.</p>
+  
+  <section class="contact">
+    <br><br><br>
+    
+    <h2>Get in Touch</h2>
+    <ul>
+        <li><b>Phone:</b> &nbsp; 123-456-7890</li>
+        <li><b>Email: </b> &nbsp; yogkumail@gmai.com</li>
+        <li><b>Email:</b> &nbsp;NithinReddy0503@gmail.com</li>
+    </ul>
+</section>
+  </div>
+
+<footer>
+    <p>@ Project by Yogesh & Nithin</p>
+</footer>
+</div>
+
+<script src="assects/js/header.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const aboutusContainer = document.querySelector('.aboutus-container');
+
+  function adjustContainerHeight() {
+    aboutusContainer.style.maxHeight = 'none';
+    const containerHeight = aboutusContainer.scrollHeight;
+    aboutusContainer.style.maxHeight = containerHeight + 'px';
+  }
+
+  window.addEventListener('resize', adjustContainerHeight);
+  adjustContainerHeight(); // Adjust height on initial load
+});
+
+</script>
+</body>
+</html>
+
+
+ 
+

@@ -1,0 +1,37 @@
+.aboutus-container {
+    color: white;
+    opacity: 1;
+    z-index: 8;
+    position: fixed;
+    top: 62px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 1000px;
+    max-height: none;
+    overflow-y: auto; 
+    padding: 20px 30px;
+    background: rgb(27, 29, 49);
+    box-shadow: 2px 2px 5px 5px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+}
+
+.description {
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    line-height: 1.6;
+    color: rgb(132, 193, 232);
+    margin-bottom: 20px;
+}
+
+.description strong {
+    font-weight: bold;
+    color: #d4dfea;
+}
+
+.description p {
+    margin-bottom: 10px;
+}
+
+.contact{
+    color: rgb(202, 215, 243);
+}
