@@ -5,6 +5,10 @@ profileIcon.addEventListener('click', () => {
   // Add profile icon click functionality here
 });
 
+
+//------------------------------------------------------------------
+// post nav diaplay
+//------------------------------------------------------------------
 document.addEventListener('DOMContentLoaded', function() {
   const postIcon = document.getElementById('postIcon');
   const postNav = document.querySelector('.post-nav');

@@ -202,6 +202,60 @@ ul li p{
 
 /* ---------------------------------------------------------------------------------- */
 /* ---------------------------------------------------------------------------------- */
+.profile-nav{
+  z-index: 5;
+  position: fixed;
+  top: 63px;
+  right: 30px;
+  width: 250px;
+  padding: 2px 0px;
+  background: rgb(27, 29, 49);
+  box-shadow: 2px 2px 5px 5px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+}
+
+.profile-nav ul li{
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+}
+
+.profile-nav ul li p{
+  color: white;
+  display: block;
+  margin-left: 10px;
+  
+}
+.input-group{
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+
+}
+
+.input-group {
+  margin-top: 0.25rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
+.input-group input {
+  width: 100%;
+  border-radius: 0.375rem;
+  border: 1px solid rgba(55, 65, 81, 1);
+  outline: 0;
+  background-color: rgba(17, 24, 39, 1);
+  padding: 0.75rem 1rem;
+  color: rgba(243, 244, 246, 1);
+}
+
+
+/* ---------------------------------------------------------------------------------- */
+/* ---------------------------------------------------------------------------------- */
 
 
 
