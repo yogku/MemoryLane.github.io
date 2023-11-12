@@ -64,10 +64,13 @@ hr {
 }
 
 .button-post {
-    background-color: var(--button-background-color);
-    color: var(--button-font-color);
+    background-color:  #007bff;
+    color: #ffffff;
 }
 
+.button-post:hover{
+    cursor: pointer;
+}
 
 .button-feedback {
     padding: 0 24px;
@@ -79,18 +82,11 @@ hr {
     font-weight: 700;
 }
 
+
 .button-feedback {
-    background-color: var(--button-background-color);
-    color: var(--button-font-color);
+    background-color:  #007bff;
+    color: #ffffff;
 }
-
-
-/* Add any custom CSS variables or fallback values here */
-:root {
-    --button-background-color: #007bff; /* Default background color */
-    --button-font-color: #ffffff; /* Default font color */
-}
-
 
 
 /* Image */

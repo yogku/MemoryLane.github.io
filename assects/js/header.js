@@ -102,3 +102,9 @@ setNewUsernameButton.addEventListener('click', () => {
     userText.textContent = 'User';
   }
 });
+
+
+// -----------------------------------------------------------------------
+// Post-text form summition
+// -----------------------------------------------------------------------
+

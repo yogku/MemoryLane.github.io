@@ -48,47 +48,36 @@
   </div>
 
   <div class="f-container">
-    <div>
-        <h3>Post</h3><br><br>
-        <hr>
-    </div>
-    <div class="title">
+    <form id="post-form" action="assets/php/post-text.php" method="post">
+
+      <input type="hidden" name="username" id="input-username" value="<?php echo localStorage.getItem('username'); ?>" required>
+      
+      <div class="title">
+        
         Title
         <div class="input-group">
-          <input name="Title" id="input-title" placeholder="Please Enter Title">
+          <input type="text" name="title" id="input-title" placeholder="Please Enter Title" required>
         </div>
-    </div>
-    <div class="title">
-          Content
-        <div class="input-group">
-          <textarea name="Title" id="input-content" placeholder="Please Enter Text" rows="5"></textarea>
-        </div>
-        <br>
-        <br>
-        <button class="button-post" style="width: 280px;">Publish</button>
-        <br>
+      </div>
+    
+      <div class="content">
+        <br><br><br>
 
-  </div>
+        Content
+        <div class="input-group">
+          <textarea name="content" id="input-content" placeholder="Please Enter Text" rows="5" required></textarea>
+        </div>
+      </div>
+      <br><br>
+      
+      <button type="submit" class="button-post" style="width: 280px;">Publish</button>
+    
+    </form>
   </div>
 
 
 
 <script src="assects/js/header.js"></script>
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  const aboutusContainer = document.querySelector('.f-container');
 
-  function adjustContainerHeight() {
-    aboutusContainer.style.maxHeight = 'none';
-    aboutusContainer.style.height = 'auto'; // Add this line
-    const containerHeight = aboutusContainer.scrollHeight;
-    aboutusContainer.style.maxHeight = containerHeight + 'px';
-  }
-
-  window.addEventListener('resize', adjustContainerHeight);
-  adjustContainerHeight(); // Adjust height on initial load
-});
-
-</script>
 </body>
 </html>
