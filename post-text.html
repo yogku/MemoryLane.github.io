@@ -50,7 +50,8 @@
   <div class="f-container">
     <form id="post-form" action="assets/php/post-text.php" method="post">
 
-      <input type="hidden" name="username" id="input-username" value="<?php echo localStorage.getItem('username'); ?>" required>
+      <input type="hidden" name="pusername" id="input-username" value="<?php echo htmlspecialchars($_COOKIE['username'] ?? ''); ?>" required>
+
       
       <div class="title">
         

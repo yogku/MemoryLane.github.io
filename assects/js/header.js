@@ -73,35 +73,64 @@ document.addEventListener('click', (event) => {
 //------------------------------------------------------------------
 // store name of user
 //------------------------------------------------------------------
-
 const inputUsername = document.getElementById('input-username');
 const setNewUsernameButton = document.querySelector('.set-new-username');
-const userText = document.querySelector('.profile-nav p b'); // Assuming the `<b>User</b>` element is wrapped in a `p` tag
+const userText = document.querySelector('.profile-nav p b');
 
-// Check for stored username in localStorage
-const storedUsername = localStorage.getItem('username');
+// Check for stored username in cookies
+const storedUsername = getCookie('username');
 if (storedUsername) {
   // If username is stored, set the text to the stored username
   userText.textContent = storedUsername;
+  // Set the input value to the stored username
+  inputUsername.value = storedUsername;
 } else {
   // If no username is stored, set the text to "User"
   userText.textContent = 'User';
 }
 
 setNewUsernameButton.addEventListener('click', () => {
-  const newUsername = inputUsername.value.trim(); // Trim whitespace from the input value
+  const newUsername = inputUsername.value.trim();
 
   if (newUsername) {
     // Update the text with the new username
     userText.textContent = newUsername;
 
-    // Save the new username to localStorage
-    localStorage.setItem('username', newUsername);
+    // Save the new username to cookies
+    setCookie('username', newUsername, 365); // 365 days expiration (adjust as needed)
   } else {
     // If input is empty, leave the text as "User"
     userText.textContent = 'User';
+
+    // Remove the username cookie
+    deleteCookie('username');
   }
 });
+
+// Function to get a cookie value by name
+function getCookie(name) {
+  const cookies = document.cookie.split(';');
+  for (let i = 0; i < cookies.length; i++) {
+    const cookie = cookies[i].trim();
+    if (cookie.startsWith(name + '=')) {
+      return cookie.substring(name.length + 1);
+    }
+  }
+  return '';
+}
+
+// Function to set a cookie
+function setCookie(name, value, days) {
+  const expirationDate = new Date();
+  expirationDate.setDate(expirationDate.getDate() + days);
+  const cookieString = `${name}=${value}; expires=${expirationDate.toUTCString()}; path=/`;
+  document.cookie = cookieString;
+}
+
+// Function to delete a cookie
+function deleteCookie(name) {
+  document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`;
+}
 
 
 // -----------------------------------------------------------------------
