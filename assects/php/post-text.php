@@ -18,10 +18,15 @@ if ($conn->connect_error) {
     $stmt->bind_param("sss", $pusername, $title, $content);
 
     if ($stmt->execute()) {
-        echo "<script>alert('Post successful')</script>";
+        // Post successful, redirect to the home page
+        header("Location: /gitMemoryLane/index.html");
+        exit();
     } else {
-        echo "<script>alert('Post unsuccessful')</script>";
+        // Post unsuccessful, show an alert and then redirect to the post-image.html page
+        echo "<script>alert('Post unsuccessful'); window.location.href='/gitMemoryLane/post-image.html';</script>";
+        exit();
     }
+    
 
     $stmt->close();
     $conn->close();

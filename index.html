@@ -6,6 +6,7 @@
   <title>Memory Lane</title>
   <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet'>
   <link rel="stylesheet" href="assects/css/header.css"> 
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 </head>
 <body>
 
@@ -47,15 +48,27 @@
   </div>
 
 <div class="c-container">
-  <div class="image-display">
-    <h2>Uploaded Images</h2>
-    <?php include 'assets/php/loadImages.php'; ?>
+  <div id="posts-container">
+    <!-- Posts will be dynamically inserted here -->
   </div>
-  <div class="content">
-    <h2>Homepage</h2>
-    <p>Post </p>
-	  <p>Post Image</p>
-  </div>
+
+  <script>
+    // Use jQuery to fetch and display data
+    $(document).ready(function() {
+        $.ajax({
+            url: 'assects/php/post-data.php',
+            type: 'GET',
+            dataType: 'html',
+            success: function(response) {
+                $('#posts-container').html(response);
+            },
+            error: function() {
+                $('#posts-container').html('<p>Error fetching data.</p>');
+            }
+        });
+    });
+</script>
+
 </div>
 
 <script src="assects/js/header.js"></script>
