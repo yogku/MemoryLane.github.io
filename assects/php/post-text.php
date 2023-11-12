@@ -1,5 +1,5 @@
 <?php
-$pusername = $_POST['pusername']
+$pusername = isset($_COOKIE['username']) ? htmlspecialchars($_COOKIE['username']) : '';
 $title = $_POST['title'];
 $content = $_POST['content'];
 
@@ -11,15 +11,19 @@ $database = "memorylanedb";
 $conn = new mysqli($servername, $username, $password, $database);
 
 if ($conn->connect_error) {
-  die("Connection failed: " . $conn->connect_error);
+    die("Connection failed: " . $conn->connect_error);
 } else {
-  $stmt = "INSERT INTO text_posts(username, title, content) VALUES('$pusername',$title', '$content')";
-  $stmt_run = mysqli_query($conn, $stmt);
+    // Use prepared statements to prevent SQL injection
+    $stmt = $conn->prepare("INSERT INTO posts(username, title, content) VALUES(?, ?, ?)");
+    $stmt->bind_param("sss", $pusername, $title, $content);
 
-  if (!$stmt_run) {
-    echo "<script>alert('Post unsuccessful')</script>";
-  } else {
-    echo "<script>alert('Post successful')</script>";
-  }
+    if ($stmt->execute()) {
+        echo "<script>alert('Post successful')</script>";
+    } else {
+        echo "<script>alert('Post unsuccessful')</script>";
+    }
+
+    $stmt->close();
+    $conn->close();
 }
 ?>
