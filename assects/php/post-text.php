@@ -23,7 +23,7 @@ if ($conn->connect_error) {
         exit();
     } else {
         // Post unsuccessful, show an alert and then redirect to the post-image.html page
-        echo "<script>alert('Post unsuccessful'); window.location.href='/gitMemoryLane/post-image.html';</script>";
+        echo "<script>alert('Post unsuccessful'); window.location.href='/gitMemoryLane/post-text.html';</script>";
         exit();
     }
     

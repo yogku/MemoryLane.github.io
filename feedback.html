@@ -48,6 +48,7 @@
   </div>
 
   <div class="f-container">
+    <form id="post-form" action="assects/php/#" method="post" enctype="multipart/form-data"></form>
     <div>
         <h3>Feedback</h3><br><br>
         <hr>
@@ -55,40 +56,21 @@
     <div class="title">
         Title
         <div class="input-group">
-          <input name="Title" id="input-title" placeholder="Please Enter Title">
+          <input type="text" name="title" id="input-title" placeholder="Please Enter Title" required>
         </div>
     </div>
     <div class="title">
           Content
         <div class="input-group">
-          <textarea name="Title" id="input-content" placeholder="Please Enter Text" rows="5"></textarea>
+          <textarea name="content" id="input-content" placeholder="Please Enter Text" rows="5" required></textarea>
         </div>
         <br>
         <br>
-        <button class="button-feedback" style="width: 280px;">Send</button>
+        <button type="submit" class="button-post" style="width: 280px;">Send</button>
         <br>
-
+    </form>
+    </div>
   </div>
-  </div>
-
-
-
 <script src="assects/js/header.js"></script>
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  const aboutusContainer = document.querySelector('.f-container');
-
-  function adjustContainerHeight() {
-    aboutusContainer.style.maxHeight = 'none';
-    aboutusContainer.style.height = 'auto'; // Add this line
-    const containerHeight = aboutusContainer.scrollHeight;
-    aboutusContainer.style.maxHeight = containerHeight + 'px';
-  }
-
-  window.addEventListener('resize', adjustContainerHeight);
-  adjustContainerHeight(); // Adjust height on initial load
-});
-
-</script>
 </body>
 </html>

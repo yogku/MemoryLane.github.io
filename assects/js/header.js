@@ -97,7 +97,7 @@ setNewUsernameButton.addEventListener('click', () => {
     userText.textContent = newUsername;
 
     // Save the new username to cookies
-    setCookie('username', newUsername, 365); // 365 days expiration (adjust as needed)
+    setCookie('username', newUsername, 365); // 365 days expiration for cookie
   } else {
     // If input is empty, leave the text as "User"
     userText.textContent = 'User';
@@ -131,9 +131,4 @@ function setCookie(name, value, days) {
 function deleteCookie(name) {
   document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`;
 }
-
-
-// -----------------------------------------------------------------------
-// Post-text form summition
-// -----------------------------------------------------------------------
 

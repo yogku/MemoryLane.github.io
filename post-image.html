@@ -71,7 +71,7 @@
         <div class="title">
             Title
             <div class="input-group">
-                <input name="title" id="input-title" placeholder="Please Enter Title">
+                <input type="text" name="title" id="input-title" placeholder="Please Enter Title" required>
             </div>
         </div>
         <div class="title">
@@ -89,22 +89,22 @@
         </div>
     </form>
     <script>
-        const uploadInput = document.getElementById('image-upload');
-        const previewContainer = document.getElementById('preview-container');
-        const imagePreview = document.getElementById('image-preview');
+      const uploadInput = document.getElementById('image-upload');
+      const previewContainer = document.getElementById('preview-container');
+      const imagePreview = document.getElementById('image-preview');
 
-        uploadInput.addEventListener('change', function () {
-            const file = this.files[0];
-            if (file) {
-                const reader = new FileReader();
-                reader.onload = function (e) {
-                    imagePreview.src = e.target.result;
-                    previewContainer.style.display = 'block';
-                }
-                reader.readAsDataURL(file);
-            }
-        });
-    </script>
+      uploadInput.addEventListener('change', function () {
+          const file = this.files[0];
+          if (file) {
+              const reader = new FileReader();
+              reader.onload = function (e) {
+                  imagePreview.src = e.target.result;
+                  previewContainer.style.display = 'block';
+              }
+              reader.readAsDataURL(file);
+          }
+      });
+  </script>
 </div>
 
   </div>

@@ -2,8 +2,7 @@
 $pusername = isset($_COOKIE['username']) ? htmlspecialchars($_COOKIE['username']) : '';
 $title = $_POST['title'];
 
-// File upload handling
-$targetDir = __DIR__ . "\\..\\upload\\"; // Absolute path to the upload directory
+$targetDir = "upload/"; 
 $targetFile = $targetDir . basename($_FILES["image"]["name"]);
 $uploadOk = 1;
 $imageFileType = strtolower(pathinfo($targetFile, PATHINFO_EXTENSION));
@@ -48,7 +47,7 @@ if ($uploadOk == 0) {
 }
 
 // Store image path in the database
-$imagePath = $targetFile;
+$imagePath = $targetFile; // This is the relative path
 
 $servername = "localhost";
 $username = "root";
@@ -64,15 +63,12 @@ if ($conn->connect_error) {
     $stmt->bind_param("sss", $pusername, $title, $imagePath);
 
     if ($stmt->execute()) {
-        // Post successful, redirect to the home page
         header("Location: /gitMemoryLane/index.html");
         exit();
     } else {
-        // Post unsuccessful, redirect to the post-image.html page
-        header("Location: /gitMemoryLane/post-image.html");
+        echo "<script>alert('Post unsuccessful'); window.location.href='/gitMemoryLane/post-image.html';</script>";
         exit();
     }
-    
 
     $stmt->close();
     $conn->close();

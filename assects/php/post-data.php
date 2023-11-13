@@ -10,15 +10,33 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-// Fetch data from the "posts" table
+
 $result = $conn->query("SELECT * FROM posts");
 
-// Check if there are any rows in the result set
+
 if ($result->num_rows > 0) {
-    // Output data of each row
+
     while ($row = $result->fetch_assoc()) {
-        // Display data on the webpage (you can customize this part)
-        echo "<p>{$row['title']} - {$row['content']}</p>";
+        echo "<div class='postdata'>";
+        echo "<br>";
+        echo "  <img id='post-user-icon' src='assects/images/profile.png'>";
+        echo "  <b id='uname'>{$row['username']}</b><br>";
+        echo "  <div class='inpostdata' style='margin-left: 90px;'>";
+    
+        echo "    <p><b class='title'>{$row['title']}</b></p>";
+        echo "    <p class='content'>{$row['content']}</p>";
+    
+
+        if (!empty($row['image_path'])) {
+            echo "    <div class='image-container'>";
+            echo "      <img class='post-image' src='assects/php/{$row['image_path']}' alt='Post Image'>";
+            echo "    </div>";
+        }
+    
+        echo "  </div>";
+    
+        echo "<br><br><hr>";
+        echo "</div>";
     }
 } else {
     echo "<p>No posts found.</p>";
