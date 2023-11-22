@@ -62,6 +62,40 @@ hr {
     border-radius: 22px;
     font-weight: 700;
 }
+#view-comment-button {
+    margin-top: 10px;
+    padding: 1rem 2rem !important;
+    font-weight: 700 !important;
+    background: rgb(182, 156, 241) !important;
+    color: blueviolet !important;
+    border-radius: .5rem !important;
+    border-bottom: 2px solid blueviolet !important;
+    border-right: 2px solid blueviolet !important;
+    border-top: 2px solid rgb(255, 255, 255) !important;
+    border-left: 2px solid white !important;
+    transition-duration: 1s !important;
+    transition-property: border-top, 
+        border-left, 
+        border-bottom,
+        border-right,
+        box-shadow !important;
+}
+
+#view-comment-button:hover {
+    border-top: 2px solid blueviolet !important;
+    border-left: 2px solid blueviolet !important;
+    border-bottom: 2px solid rgb(152, 103, 238) !important;
+    border-right: 2px solid rgb(143, 103, 238) !important;
+    box-shadow: rgba(0, 0, 0, 0.3) 5px 5px, rgba(0, 0, 0, 0.2) 10px 10px, rgba(0, 0, 0, 0.1) 15px 15px !important;
+}
+
+
+  #comment-section textarea{
+    width: 900px;
+    border-radius: 10px; 
+    background-color: rgb(207, 192, 241);
+    padding: 10px; 
+  }
 
 .button-post {
     background-color:  #007bff;

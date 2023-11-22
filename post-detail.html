@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Memory Lane</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet'>
+  <link rel="stylesheet" href="assects/css/header.css"> 
+  <link rel="stylesheet" href="assects/css/post.css">
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+
+  <div class="header">
+    <a href="index.html" class="logo"><h1>MemoryLane</h1></a>
+    <div class="profileIcon" ><img src="assects/images/profile.png"></div> 
+    <div class="post-icon" id="postIcon"><img src="assects/images/post-icon.png"></div>
+  </div>
+
+ 
+  <div class="side-nav">
+    <ul>
+        <li><a href="index.html"><img src="assects/images/home.png"></a>      <a href="index.html">  <p><b>Home  </b></p> </a></li>
+        <li><a href="aboutus.html"><img src="assects/images/aboutus.png"></a>   <a href="aboutus.html">  <p><b>About us  </b></p> </a></li>
+        <li><a href="feedback.html"><img src="assects/images/feedback.png"></a>  <a href="feedback.html">  <p><b>Feedback  </b></p> </a></li>
+
+    </ul>
+    <ul>
+        <li><img src="assects/images/Language.png"> <p><b>Language</b></p></li>
+    </ul>
+  </div>
+
+  <div class="post-nav">
+    <ul>
+      <li><a href="post-text.html"><img src="assects/images/post-text.png"></a>  <a href="post-text.html"> <p><b>Post  </b></p></a></li>
+      <li><a href="post-image.html"><img src="assects/images/post-image.png"></a> <a href="post-image.html"><p><b>Image </b></p></a></li> 
+  </ul>
+  </div>
+  
+  <div class="profile-nav" id="profileNav">
+    <ul>
+      <li><img src="assects/images/profile.png"><p><b>User</b></p></li>       
+  </ul>
+
+    <div class="input-group">
+      <input name="new-username" id="input-username" placeholder="Set New Username">
+      <button class="set-new-username">Set</button>  
+    </div>
+  </div>
+
+<div class="c-container">
+ <!-- <b> Home Page </b> <br><br> <hr> -->
+  <div id="posts-detail-container">
+    <div class ="postdata">
+
+        <!-- Data is loading from database  -->
+
+    </div>
+  </div>
+
+  <script>
+    $(document).ready(function() {
+        // Fetch and display initial data
+        fetchData();
+
+        // Function to fetch and display data
+        function fetchData() {
+            // Get the post_id from the URL
+            const urlParams = new URLSearchParams(window.location.search);
+            const postId = urlParams.get('post_id');
+
+            // Fetch and display data
+            $.ajax({
+                url: 'assects/php/post-detail.php?post_id=' + postId,
+                type: 'GET',
+                dataType: 'html',
+                success: function(response) {
+                    $('#posts-detail-container').html(response);
+                },
+                error: function() {
+                    $('#posts-detail-container').html('<p>Error fetching data.</p>');
+                }
+            });
+        }
+
+        // Handle form submission
+        $(document).on('submit', '#comment-form', function(e) {
+            e.preventDefault();
+
+            $.ajax({
+                url: 'assects/php/post-detail.php',
+                type: 'POST',
+                data: $(this).serialize(),
+                contentType: 'application/x-www-form-urlencoded', // Set content type
+                success: function(response) {
+                    // Display the new comment or handle the response accordingly
+                    console.log(response);
+
+                    // Fetch and display updated data after submission
+                    fetchData();
+                },
+                error: function() {
+                    console.log('Error submitting comment.');
+                }
+            });
+        });
+    });
+</script>
+
+</div>
+
+<script src="assects/js/header.js"></script>
+</body>
+</html>
