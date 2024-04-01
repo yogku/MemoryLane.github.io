@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5107419722863748"
+     crossorigin="anonymous"></script>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-7Q549QGDQQ"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -69,19 +71,21 @@
   <script>
     // fetch and display data
     $(document).ready(function() {
-        $.ajax({
-            url: 'assects/php/post-data.php',
-            type: 'GET',
-            dataType: 'html',
-            success: function(response) {
-                $('#posts-container').html(response);
-            },
-            error: function() {
-                $('#posts-container').html('<p>Error fetching data.</p>');
-            }
-        });
+      $.ajax({
+        url: 'assects/php/post-data.php',
+        type: 'GET',
+        dataType: 'html',
+        success: function(response) {
+          $('#posts-container').html(response);
+        },
+        error: function(jqXHR, textStatus, errorThrown) {
+          console.error("Error fetching data:", textStatus, errorThrown);
+          $('#posts-container').html('<p>Error fetching data. Please try again later.</p>');
+        }
+      });
     });
-</script>
+  </script>
+  
 </div>
 
 <script src="assects/js/header.js"></script>
